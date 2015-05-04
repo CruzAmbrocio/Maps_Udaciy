@@ -4,3 +4,35 @@ html, body, #map-canvas {
     margin: 0px;
     padding: 0px;
 }
+.name{
+    font-family:'Source Sans Pro', sans-serif;
+}
+.blue{
+    color: #0055ff;
+}
+.red{
+    color: #ff002b;
+}
+.pink{
+    color: #ff00ff;
+}
+.yellow{
+    color: #ffff00;
+}
+/*body{
+    width:100%;
+    height:100%;
+    background:#F2F5A9;
+    animation: animacionColor 10s infinite;
+}
+@keyframes animacionColor{
+    0% {background: #F2F5A9;}
+    15% {background: #81F781;}
+    30% {background: #FF8000;}
+    40% {background: #58D3F7;}
+    60% {background: #9A2EFE;}
+    75% {background: #FA5858;}
+    88% {background: #BDBDBD;}
+    100% {background: #F2F5A9;}
+}*/
+
