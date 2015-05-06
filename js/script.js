@@ -1,5 +1,63 @@
 //Java code.
+var map;
+function initialize() {
+  var mapOptions = {
+    zoom: 15,
+    center: new google.maps.LatLng(14.64072, -90.51327),
+    mapTypeId: google.maps.MapTypeId.HYBRID,
+    heading: 90,
+    tilt: 45
+  };
+  map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
+  map.setTilt(45);
+}
+function rotate90() {
+  var heading = map.getHeading() || 0;
+  map.setHeading(heading + 90);
+}
+function autoRotate() {
+  // Determine if we're showing aerial imagery
+  if (map.getTilt() != 0) {
+    window.setInterval(rotate90, 3000);
+  }
+}
+google.maps.event.addDomListener(window, 'load', initialize);
 
+
+
+
+
+
+
+/*
+var map;
+function initialize() {
+  var mapOptions = {
+    center: new google.maps.LatLng(14.64072, -90.51327),
+    zoom: 18,
+    mapTypeId: google.maps.MapTypeId.SATELLITE,
+    heading: 90,
+    tilt: 45
+  };
+  map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
+}
+
+function rotate90() {
+  var heading = map.getHeading() || 0;
+  map.setHeading(heading + 90);
+}
+
+function autoRotate() {
+  // Determine if we're showing aerial imagery
+  if (map.getTilt() != 0) {
+    window.setInterval(rotate90, 3000);
+  }
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+
+/*
 var map;
 function initialize() {
   // Create a map centered in Pyrmont, Sydney (Australia).
@@ -33,13 +91,7 @@ function callback(results, status) {
   }
 }
 
-google.maps.event.addDomListener(window, 'load', initialize);
-
-
-
-
-
-
+google.maps.event.addDomListener(window, 'load', initialize);*/
 
 
 
