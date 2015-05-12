@@ -19,11 +19,8 @@
 <body ng-app="myApp">
     <map center="14.64072, -90.51327" zoom="15" id="map"></map>
     <div class="InputSearch container">
-        <div>Google Places Autocomplte integration in Angular</div>
-        <div>To Test, start typing the name of any Indian city</div>
         <div>selection is: {{chosenPlace}}</div>
         <div>details object is: {{chosenPlaceDetails}}</div>
-        <div>Este es el link : {{loc}}</div>
         <div><input ng-model="chosenPlace" details="chosenPlaceDetails" googleplace/></div>
     </div>
     <script src="js/app.js"></script>

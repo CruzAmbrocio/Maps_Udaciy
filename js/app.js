@@ -1,11 +1,10 @@
 var myApp = angular.module('myApp', ["ngMap"]);
-var link="";
 myApp.directive('googleplace', function() {
     return {
         require: 'ngModel',
         scope: {
             ngModel: '=',
-            details: '=?',
+            details: '=',
         },
         link: function(scope, element, attrs, model) {
             var options = {
@@ -16,7 +15,6 @@ myApp.directive('googleplace', function() {
             google.maps.event.addListener(scope.gPlace, 'place_changed', function() {
                 scope.$apply(function() {
                     scope.details = scope.gPlace.getPlace();
-                    scope.loc= link;
                     model.$setViewValue(element.val());
                 });
             });
