@@ -1,17 +1,5 @@
 var app=angular.module('myApp', ['ngMap']);
 
-  app.controller('EventArgumentsCtrl', function($scope) {
-    var map;
-    $scope.$on('mapInitialized', function(evt, evtMap) {
-      map = evtMap;
-      $scope.placeMarker = function(e) {
-        var marker = new google.maps.Marker({position: e.latLng, map: map});
-        map.panTo(e.latLng);
-      }
-    });
-  });
-
-
 /*
 myApp.directive('googleplace', function() {
     return {
@@ -39,21 +27,6 @@ myApp.directive('googleplace', function() {
 function MyCtrl($scope) {
     $scope.gPlace;
 }*/
-
-
-
-
-/*
- myApp.controller('EventArgumentsCtrl', function($scope) {
-    var map;
-    $scope.$on('mapInitialized', function(evt, evtMap) {
-      map = evtMap;
-      $scope.placeMarker = function(e) {
-        var marker = new google.maps.Marker({position: e.latLng, map: map});
-        map.panTo(e.latLng);
-      }
-    });
-  });*/
 
 
 
