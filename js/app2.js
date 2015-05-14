@@ -1,4 +1,5 @@
   app.controller('EventArgumentsCtrl', function($scope) {
+
     var map;
     $scope.$on('mapInitialized', function(evt, evtMap) {
       map = evtMap;

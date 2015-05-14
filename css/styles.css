@@ -59,13 +59,3 @@ body{
 .two{
     display: inline-block;
 }
-
-.uncheckedClass {
-    background-color:#eeeeee;
-    color:black;
-}
- 
-.checkedClass {
-    background-color:#3ab44a;
-    color:white;
-}
