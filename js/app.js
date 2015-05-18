@@ -14,6 +14,11 @@ var app=angular.module('myApp', ['ngMap']);
       }
     };
     var iterator=0;
+    var numMark=0;
+    var resul1=0;
+    var resul2=0;
+    var resul3=0;
+    var resul4=0;
     var image ="images/star.png"
     $scope.addMarker = function() {
       for (var i=0; i<$scope.neighborhoods.length; i++) {
@@ -25,8 +30,21 @@ var app=angular.module('myApp', ['ngMap']);
             draggable: false,
             animation: google.maps.Animation.DROP,
             icon:image
-          });
-        }, i * 200);
+          });console.log($scope.neighborhoods[numMark++])
+          if (numMark == 1){
+            resul1=1
+            console.log(resul1)
+          }else if (numMark==2) {
+            resul2=2
+            console.log(resul2)
+          }else if (numMark==3){
+            resul3=3
+            console.log(resul3)
+          }else{
+            resul4=4
+            console.log(resul4)
+          }
+        }, i * 300);
       }
     }
   });

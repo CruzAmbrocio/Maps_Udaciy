@@ -18,18 +18,15 @@
 </head>
 <body ng-app="myApp">
 
-   <span ng-controller="MarkerAnimationsIterationCtrl" class="ng-scope">
-      <span id="panel">
-        <button id="drop" ng-click="addMarker()">Drop Markers</button>
-       </span>
-      <map center="52.520816, 13.410186" zoom="12" id="map">
-      </map>
+   <span ng-controller="MarkerAnimationsIterationCtrl" class="ng-scope" ng-init="addMarker()">
+        <map center="52.520816, 13.410186" zoom="12" id="map"></map>
     </span>
+
 <!--para agregar marcadores al azar
     <span ng-controller="EventArgumentsCtrl" class="ng-scope">
         <map center="14.64072, -90.51327" zoom="15" id="map"  on-click="placeMarker()"></map>
     </span>-->
-    <div class="InputSearch container">
+    <div class="InputSearch ">
 
     <!-- Para la google api de autocompletado
     <div class="red">selection is: {{chosenPlace}}</div>
@@ -48,7 +45,11 @@
         </span>
         <p ng-if="count1%2">jkhfgkjhgj</p>
         <p ng-if="count2%2"> Favoritos</p>
-
+        <br/>
+        <span ng-if="resul1=1">{{resul1}} </span>
+        <span ng-if="resul2=2">{{resul2}} </span>
+        <span ng-if="resul3=3">{{resul3}} </span>
+        <span ng-if="resul4=4">{{resul4}} </span>
     </div><!--End container-->
     <script src="js/app.js"></script>
     <script src="js/app2.js"></script>
