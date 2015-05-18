@@ -17,19 +17,30 @@
     <script src="js/shared/ng-map.min.js"></script>
 </head>
 <body ng-app="myApp">
+
+   <span ng-controller="MarkerAnimationsIterationCtrl" class="ng-scope">
+      <span id="panel">
+        <button id="drop" ng-click="addMarker()">Drop Markers</button>
+       </span>
+      <map center="52.520816, 13.410186" zoom="12" id="map">
+      </map>
+    </span>
+<!--para agregar marcadores al azar
     <span ng-controller="EventArgumentsCtrl" class="ng-scope">
         <map center="14.64072, -90.51327" zoom="15" id="map"  on-click="placeMarker()"></map>
-    </span>
+    </span>-->
     <div class="InputSearch container">
 
-    <!--<div class="red">selection is: {{chosenPlace}}</div>
+    <!-- Para la google api de autocompletado
+    <div class="red">selection is: {{chosenPlace}}</div>
         <div>details object is: {{chosenPlaceDetails}}</div>
         <div>
             <input ng-model="chosenPlace" details="chosenPlaceDetails" googleplace/>
         </div>-->
+
         <div class="one" data-toggle="tooltip" title="Favorites" ng-click="count1 = count1 + 1" ng-init="count1=0"></div>
         <br/>
-        <div class="two" data-toggle="tooltip" title="marker" ng-click="count2 = count2 + 1" ng-init="count2=0"></div>
+        <div class="two" data-toggle="tooltip" title="markers" ng-click="count2 = count2 + 1" ng-init="count2=0"></div>
         <br/>
         <span>
           Marcador: {{count1}}

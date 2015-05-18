@@ -1,4 +1,5 @@
-  app.controller('EventArgumentsCtrl', function($scope) {
+
+/*  app.controller('EventArgumentsCtrl', function($scope) {
 
     var map;
     var image ="../images/localization.png";
@@ -10,3 +11,4 @@
       }
     });
   });
+*/
