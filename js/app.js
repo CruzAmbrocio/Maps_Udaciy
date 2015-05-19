@@ -1,7 +1,7 @@
 var app=angular.module('myApp', ['ngMap']);
   app.controller('MarkerAnimationsIterationCtrl', function($scope, $timeout) {
     $scope.neighborhoods = [
-      new google.maps.LatLng(52.511467, 13.447179),
+      new google.maps.LatLng(52.5088241, 13.334207800000058),
       new google.maps.LatLng(52.549061, 13.422975),
       new google.maps.LatLng(52.497622, 13.396110),
       new google.maps.LatLng(52.517683, 13.394393)
@@ -15,10 +15,15 @@ var app=angular.module('myApp', ['ngMap']);
     };
     var iterator=0;
     var numMark=0;
-    var resul1=0;
-    var resul2=0;
-    var resul3=0;
-    var resul4=0;
+    var idMark="";
+
+    var cont1= '<p class="InputSearch">hola que hace<p>';
+    var infowindow = new google.maps.InfoWindow({
+        content:cont1
+    });
+       google.maps.event.addListener($scope.neighborhoods[0],'click', function() {
+        infowindow.open(map,$scope.neighborhoods[0]);
+      });
     var image ="images/star.png"
     $scope.addMarker = function() {
       for (var i=0; i<$scope.neighborhoods.length; i++) {
@@ -29,21 +34,28 @@ var app=angular.module('myApp', ['ngMap']);
             map: $scope.map,
             draggable: false,
             animation: google.maps.Animation.DROP,
-            icon:image
+            icon:image,
+            title:idMark
           });console.log($scope.neighborhoods[numMark++])
-          if (numMark == 1){
-            resul1=1
-            console.log(resul1)
-          }else if (numMark==2) {
-            resul2=2
-            console.log(resul2)
-          }else if (numMark==3){
-            resul3=3
-            console.log(resul3)
+          if (iterator == 4){
+            idMark="four";
+            console.log(idMark)
+            console.log(iterator)
+          }else if (iterator==1){
+            idMark="one";
+            console.log(idMark)
+            console.log(iterator)
+          }else if (iterator==2){
+            idMark="two";
+            console.log(idMark)
+            console.log(iterator)
+          }else if (iterator==3){
+            idMark="three";
+            console.log(idMark)
+            console.log(iterator)
           }else{
-            resul4=4
-            console.log(resul4)
-          }
+            console.log("un error")
+          };
         }, i * 300);
       }
     }
