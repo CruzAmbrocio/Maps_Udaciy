@@ -3,7 +3,7 @@ var app=angular.module('myApp', ['ngMap']);
     $scope.neighborhoods = [
     ["Humannplatz Germany", "52.549061", "13.422975", "icon1", "<div>Humannplatz <b>Germany</b></div>"],
     ["Humboldt University of Berlin", "52.517683", "13.394393", "icon2", "<div><b>Humboldt</b> University of Berlin</div>"],
-    ["Zoo Berlin", "52.5088241", "13.334207800000058", "icon3", "<div><b>ZOO</b>Berlin</div>"],
+    ["Zoo Berlin", "52.5088241", "13.334207800000058", "icon3", "<div><b>ZOO</b>Berlin</div><br/><p></P>"],
     ["Brachvogelstraße","52.497622", "13.396110", "icon4", "<div><b>Brachvogelstraße</b>Berlin</div>"],
     ["Museum für Naturkunde","52.540211","13.362722","icon5","<div><b>Museum für Naturkunde</b>Berlin</div>"],
     ];console.log($scope.neighborhoods)
@@ -20,22 +20,13 @@ var app=angular.module('myApp', ['ngMap']);
     }
     var marker =Array();
     var infowindow=false;
+    var image=icon1 = new google.maps.MarkerImage("images/star.png");
 $scope.addMarker=function (map, loc) {
-    var icon1 = new google.maps.MarkerImage(
-        "images/star.png"
-    );
-    var icon2 = new google.maps.MarkerImage(
-        "images/star.png"
-    );
-    var icon3 = new google.maps.MarkerImage(
-        "images/star.png"
-    );
-    var icon4 = new google.maps.MarkerImage(
-        "images/star.png"
-    );
-    var icon5 = new google.maps.MarkerImage(
-        "images/star.png"
-    );
+    var icon1 = image;
+    var icon2 = image;
+    var icon3 = image;
+    var icon4 = image;
+    var icon5 = image;
     for(var i=0; i<loc.length; i++) {
         var locMark = loc[i];
         var myLatLng = new google.maps.LatLng(locMark[1], locMark[2]);
