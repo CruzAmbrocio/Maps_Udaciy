@@ -13,7 +13,6 @@ var app=angular.module('myApp', ['ngMap']);
         var mapOptions = {
             zoom: 12,
             center: new google.maps.LatLng(A, F),
-            mapTypeId: google.maps.MapTypeId.ROADMAP
         }
         var map = new google.maps.Map(document.getElementById("map"), mapOptions);
         $scope.addMarker(map, $scope.neighborhoods);
@@ -27,9 +26,11 @@ var app=angular.module('myApp', ['ngMap']);
     var icon3 = image;
     var icon4 = image;
     var icon5 = image;
+
     for(var i=0; i<loc.length; i++) {
         var locMark = loc[i];
         var myLatLng = new google.maps.LatLng(locMark[1], locMark[2]);
+
         marker[i]=new google.maps.Marker({
             position: myLatLng,
             map: map,
@@ -37,17 +38,24 @@ var app=angular.module('myApp', ['ngMap']);
             icon: eval(locMark[3]),
             title: locMark[0]
         });
+
         marker[i].infoWindow=new google.maps.InfoWindow({
             content: locMark[4]
         });
-        google.maps.event.addListener(marker[i], 'click', function(){      
+
+
+
+        google.maps.event.addListener(marker[i], 'click', function(){
             if(infowindow)
                 infowindow.close();
             infowindow = this.infoWindow;
             infowindow.open(map, this);
         });
-    }console.log($scope.neighborhoods[4])
+
+    }console.log(marker[0].title)
+
     }
+
   });
 
 
