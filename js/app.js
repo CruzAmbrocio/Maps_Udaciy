@@ -21,18 +21,37 @@ var app=angular.module('myApp', ['ngMap']);
     var infowindow=false;
     var newarray=[];
     var image=icon1 = new google.maps.MarkerImage("images/star.png");
+
+    $scope.valor=function () {
+    for(var i=0; i<$scope.neighborhoods.length; i++) {
+        var locMark = $scope.neighborhoods[i][0];
+        document.getElementById("placeSearch").value = locMark;
+        console.log(locMark)
+    }
+    }
+    
+    $scope.markSearch=function(){
+    var porId= document.getElementsByClassName("formulario")[0].value
+        var A =52.54875699999999;
+        var F = 13.420661999999993;
+        var mapOptions = {
+            zoom: 18,
+            center: new google.maps.LatLng(A, F),
+        }
+        var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+        $scope.addMarker(map, $scope.neighborhoods);
+    }
+
+
     $scope.addMarker=function (map, loc) {
     var icon1 = image;
     var icon2 = image;
     var icon3 = image;
     var icon4 = image;
     var icon5 = image;
-
     for(var i=0; i<loc.length; i++) {
-
         var locMark = loc[i];
         var myLatLng = new google.maps.LatLng(locMark[1], locMark[2]);
-
         marker[i]=new google.maps.Marker({
             position: myLatLng,
             map: map,
@@ -40,20 +59,14 @@ var app=angular.module('myApp', ['ngMap']);
             icon: eval(locMark[3]),
             title: locMark[0]
         });
-
-
         google.maps.event.addListener(marker[i], 'click', function(){
             if(infowindow)
                 infowindow.close();
             infowindow = tnfoWindow;
             infowindow.open(map, this);
         });
-
-    }console.log(newarray)
-        var marke =$scope.neighborhoods;
-    for(var i=0; i<$scope.neighborhoods.length; i++) {
-        newarray=marke[i].title
     }
+
     }
   });
 
