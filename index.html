@@ -15,24 +15,55 @@
     <script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
     <script src="js/shared/angular.js"></script>
     <script src="js/shared/ng-map.min.js"></script>
+     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+      <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+      <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+      <link rel="stylesheet" href="/resources/demos/style.css">
+  <script >
+  $(function() {
+    var availableTags = [
+      "Humannplatz Germany",
+      "Humboldt University of Berlin",
+      "Zoo Berlin",
+      "East Side Gallery",
+      "Jewish Museum Berlin"
+    ];
+    $( "#tags" ).autocomplete({
+      source: availableTags
+    });
+  });
+  </script>
 </head>
 <body ng-app="myApp" ng-controller="MarkerAnimations">
    <span  class="ng-scope" ng-init="mapa()">
         <map id="map"></map>
     </span>
-
     <div class="InputSearch" >
-        <input ng-model="query" type="text" placeholder="hola que hace" name="placeSearch" id="placeSearch" class="formulario" />
-        <span class="iconSearch"  title="Search" ng-click"markSearch()"></span>
-        <li ng-repeat="city in neighborhoods | filter:query" ng-click="valor()" id="hola">
+        <input ng-model="query" type="text" placeholder="Insert a place" name="placeSearch" id="placeSearch" class="formulario" />
+        <span class="iconSearch" title="Search" id="botSearch" ng-click="item()"></span>
+        <li ng-repeat="city in neighborhoods | filter:query">
             {{city[0]}}
         </li>
-
         <br/>
         <div class="one" data-toggle="tooltip" title="Favorit" ng-click="count1 = count1 + 1" ng-init="count1=0"></div>
         <br/>
         <div class="two" data-toggle="tooltip" title="markers" ng-click="count2 = count2 + 1" ng-init="count2=0"></div>
         <br/>
+<div class="ui-widget">
+  <label for="tags">Tags: </label>
+  <input id="tags">
+</div>
+
+    <div class="contZoo container">
+        <div class="col-md-4"><img src='http://www.guiadealemania.com/wp-content/uploads/2012/05/zoo-berlin.png'></div>
+        <div class="col-md-8">
+        <p>
+            <b>Bienvenido al zoológico de Berlín</b>
+El más zoológico ricos en especies en el mundo. Descubra el zoo de Berlín, el primer zoológico en Alemania, la gran variedad de fauna. Aquí viven no sólo los animales del zoológico exóticos como osos polares, elefantes, focas, leones o jirafas. Muchas razas en peligro de extinción de animales domésticos, se puede visitar con nosotros.
+        </p>
+        </div>
+    </div>
+
         <span>
           Marcador: {{count1}}
           Favorito: {{count2}}

@@ -28,7 +28,7 @@ body{
 }
 
 .iconSearch:before{
-    content: "\e916";
+    content: "\f02e";
     font-family: 'icomoon';
     color:#0080ff;
     font-size: 20px;
