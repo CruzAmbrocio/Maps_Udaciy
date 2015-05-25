@@ -5,8 +5,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
     <link rel="icon" href="images/iconPage.png">
     <title>Frontend Maps</title>
     <link href="css/ibs/bootstrap.css" rel="stylesheet">
@@ -15,97 +13,32 @@
     <script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
     <script src="js/shared/angular.js"></script>
     <script src="js/shared/ng-map.min.js"></script>
-     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-      <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-      <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-      <link rel="stylesheet" href="/resources/demos/style.css">
-  <script >
-  $(function() {
-    var availableTags = [
-      "Humannplatz Germany",
-      "Humboldt University of Berlin",
-      "Zoo Berlin",
-      "East Side Gallery",
-      "Jewish Museum Berlin"
-    ];
-    $( "#tags" ).autocomplete({
-      source: availableTags
-    });
-  });
-  </script>
+    <script type="text/javascript" src="js/libs/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/libs/jquery.autocomplete.min.js"></script>
+    <link rel="stylesheet" href="fonts/style.css">
 </head>
 <body ng-app="myApp" ng-controller="MarkerAnimations">
-   <span  class="ng-scope" ng-init="mapa()">
+<!--Here called map -->
+    <span  class="ng-scope" ng-init="mapa()">
         <map id="map"></map>
     </span>
-    <div class="InputSearch" >
-        <input ng-model="query" type="text" placeholder="Insert a place" name="placeSearch" id="placeSearch" class="formulario" />
-        <span class="iconSearch" title="Search" id="botSearch" ng-click="item()"></span>
-        <li ng-repeat="city in neighborhoods | filter:query">
-            {{city[0]}}
-        </li>
-        <br/>
-        <div class="one" data-toggle="tooltip" title="Favorit" ng-click="count1 = count1 + 1" ng-init="count1=0"></div>
-        <br/>
-        <div class="two" data-toggle="tooltip" title="markers" ng-click="count2 = count2 + 1" ng-init="count2=0"></div>
-        <br/>
-<div class="ui-widget">
-  <label for="tags">Tags: </label>
-  <input id="tags">
-</div>
-
-    <div class="contZoo container">
-        <div class="col-md-4"><img src='http://www.guiadealemania.com/wp-content/uploads/2012/05/zoo-berlin.png'></div>
-        <div class="col-md-8">
-        <p>
-            <b>Bienvenido al zoológico de Berlín</b>
-El más zoológico ricos en especies en el mundo. Descubra el zoo de Berlín, el primer zoológico en Alemania, la gran variedad de fauna. Aquí viven no sólo los animales del zoológico exóticos como osos polares, elefantes, focas, leones o jirafas. Muchas razas en peligro de extinción de animales domésticos, se puede visitar con nosotros.
-        </p>
+    <div class="InputSearch">
+        <div class="container">
+            <span class="icon-notice2 one "  data-toggle="tooltip" title="information about bookmarks" ng-click="count1 = count1 + 1" ng-init="count1=0"></span>
+            <span ng-if="count1%2">
+        <!--Here defined the search box and list select-->
+              <p id="searchfield" ng-init="list()" class="contInput">
+                <input type="text" name="currency" class="biginput" id="autocomplete">
+                <span class="icon-magnifier" ng-click="select()"></span>
+              </p><!-- @end #searchfield -->
+            </span>
+        </div><!--End container-->
+        <div class="container hola">{{count2}}
         </div>
-    </div>
+    </div><!--End InputSearch-->
 
-        <span>
-          Marcador: {{count1}}
-          Favorito: {{count2}}
-        </span>
-        <p ng-if="count1%2">jkhfgkjhgj</p>
-        <p ng-if="count2%2"> Favoritos</p>
-        <br/>
-        <span ng-if="resul1=1">{{resul1}} </span>
-        <span ng-if="resul2=2">{{resul2}} </span>
-        <span ng-if="resul3=3">{{resul3}} </span>
-        <span ng-if="resul4=4">{{resul4}} </span>
-    </div><!--End container-->
     <script src="js/app.js"></script>
     <script src="js/app2.js"></script>
-    <script src="js/libs/jquery-2.1.1.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
-
-
-    <!--
-    <div class="InputSearch ">
-    <div class="red">selection is: {{chosenPlace}}</div>
-    <div>details object is: {{chosenPlaceDetails}}</div>
-        <div>
-            <input ng-model="chosenPlace" details="chosenPlaceDetails" googleplace/>
-            <span class="iconSearch" data-toggle="tooltip" title="Search"></span>
-        </div>
-
-        <div class="one" data-toggle="tooltip" title="Favorit" ng-click="count1 = count1 + 1" ng-init="count1=0"></div>
-        <br/>
-        <div class="two" data-toggle="tooltip" title="markers" ng-click="count2 = count2 + 1" ng-init="count2=0"></div>
-        <br/>
-        <span>
-          Marcador: {{count1}}
-          Favorito: {{count2}}
-        </span>
-        <p ng-if="count1%2">jkhfgkjhgj</p>
-        <p ng-if="count2%2"> Favoritos</p>
-        <br/>
-        <span ng-if="resul1=1">{{resul1}} </span>
-        <span ng-if="resul2=2">{{resul2}} </span>
-        <span ng-if="resul3=3">{{resul3}} </span>
-        <span ng-if="resul4=4">{{resul4}} </span>
-    </div>--><!--End container-->
