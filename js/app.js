@@ -50,13 +50,12 @@ var app=angular.module('myApp', ['ngMap']);
             console.log("ha fallado")
         };
         //code of close div with information
-$(".close").click(function(event){
-event.preventDefault();
-$("#delete").hide(1000);
-$("#delete").hide("slow");
-});
+        $(".close").click(function(event){
+        event.preventDefault();
+        $("#delete").hide(1000);
+        $("#delete").hide("slow");
+        });
     }
-
     //adding map of google api
     $scope.mapa=function(){
         var A =52.520816;
@@ -101,61 +100,3 @@ $("#delete").hide("slow");
     }console.log(marker[0].title)
     }
   });
-
-/*
-myApp.directive('googleplace', function() {
-    return {
-        require: 'ngModel',
-        scope: {
-            ngModel: '=',
-            details: '=',
-        },
-        link: function(scope, element, attrs, model) {
-            var options = {
-                types: [],
-                componentRestrictions: {}
-            };
-            scope.gPlace = new google.maps.places.Autocomplete(element[0], options);
-            google.maps.event.addListener(scope.gPlace, 'place_changed', function() {
-                scope.$apply(function() {
-                    scope.details = scope.gPlace.getPlace();
-                    model.$setViewValue(element.val());
-                });
-            });
-        }
-    };
-});
-//myApp.factory('myService', function() {});
-function MyCtrl($scope) {
-    $scope.gPlace;
-}*/
-
-
-
-/*
-myApp.directive('googleplace', function() {
-    return {
-        require: 'ngModel',
-        scope: {
-            ngModel: '=',
-            details: '=',
-        },
-        link: function(scope, element, attrs, model) {
-            var options = {
-                types: [],
-                componentRestrictions: {}
-            };
-            scope.gPlace = new google.maps.places.Autocomplete(element[0], options);
-            google.maps.event.addListener(scope.gPlace, 'place_changed', function() {
-                scope.$apply(function() {
-                    scope.details = scope.gPlace.getPlace();
-                    model.$setViewValue(element.val());
-                });
-            });
-        }
-    };
-});
-//myApp.factory('myService', function() {});
-function MyCtrl($scope) {
-    $scope.gPlace;
-}*/
