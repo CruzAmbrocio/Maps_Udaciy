@@ -18,6 +18,10 @@ body{
     cursor: pointer;
     display: inline-block;
 }
+.letf{
+    display: inline-block;
+    width: 200px;
+}
 .contInput{
     margin-left: 10%;
 }
