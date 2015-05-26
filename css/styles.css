@@ -24,6 +24,7 @@ body{
 }
 .contInput{
     margin-left: 10%;
+        width: 300px;
 }
 .one{
     margin-left: 10%;
@@ -80,7 +81,7 @@ body{
 .biginput{
     border-radius: 5px;
     height: 30px;
-    width: 250px;
+    width: 240px;
     display: inline-block;
 }
 .autocomplete-suggestions {

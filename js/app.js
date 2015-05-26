@@ -27,27 +27,27 @@ var app=angular.module('myApp', ['ngMap']);
         // body...
         var porId=document.getElementById("autocomplete").value;
         if (porId==="Humannplatz Germany") {
-            console.log("Este es el primero")
+            console.log("this first")
           var thehtml = "<div class='contZoo container' id='delete'><div class='col-md-4'><img src='http://cdn.c.photoshelter.com/img-get2/I0000P.PhuJ2D2gY/fit=1000x750/Subway-Berlin-34.jpg' class='image'></div><div class='col-md-8'><b>Bienvenido Humannplatz Germany</b><div class='close'>X</div> <br/>Un gran lugar para tener un paseo con su perro, o simplemente tener una carrera.El patio es perfecto para los niños, ya que tiene una gran cantidad de variación, y hay un montón de árboles, por lo que incluso puede jugar Cuando el verano es agradable y caliente.</div></div>";
-          $('.hola').html(thehtml);
+          $('.html').html(thehtml);
         }else if(porId==="Humboldt University of Berlin"){
-            console.log("este es el segundo")
+            console.log("this second")
           var thehtml = "<div class='contZoo container' id='delete'><div class='col-md-4'><img src='https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSKtAY9wbL9c53nvRY_aoJ20rGAiRYfReu8xrnvg7YkUZDDfgjH'class='image'></div><div class='col-md-8'><b>Humboldt University</b><div class='close'>X</div> <br/>La oficina de representación de la Universidad en la avenida Unter den Linden, el antiguo palacio del príncipe Heinrich, hace hoy un aspecto imponente y es una atracción para muchas personas.En el centro del campus tradicional Humanidades y Ciencias Sociales, Ciencias Económicas y de la teología tiene su sede, el Campus Norte une las ciencias de la vida, y en Adlershof campus son las matemáticas y las ciencias naturales.</div></div>";
-          $('.hola').html(thehtml);
+          $('.html').html(thehtml);
         }else if (porId==="Zoo Berlin"){
-            console.log("este es el tercero")
+            console.log("this third")
           var thehtml = "<div class='contZoo container' id='delete'><div class='col-md-4'><img src='http://www.guiadealemania.com/wp-content/uploads/2012/05/zoo-berlin.png' class='image'></div><div class='col-md-8'><p><b>Bienvenido al zoológico de Berlín</b><div class='close'>X</div> <br/>El más zoológico ricos en especies en el mundo. Descubra el zoo de Berlín, el primer zoológico en Alemania, la gran variedad de fauna. Aquí viven no sólo los animales del zoológico exóticos como osos polares, elefantes, focas, leones o jirafas. Muchas razas en peligro de extinción de animales domésticos, se puede visitar con nosotros.</p></div></div>";
-          $('.hola').html(thehtml);
+          $('.html').html(thehtml);
         }else if (porId==="East Side Gallery"){
-            console.log("este es el Cuarto")
+            console.log("this fourt")
           var thehtml = "<div class='contZoo container' id='delete'><div class='col-md-4'><img src='https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRRCZF75VTfqOEl6JPtJAjdGWtrz9KnBwCoXaPj41QF9WzSRBIq' class='image'></div><div class='col-md-8'><p><b>EAST SIDE GALLERY BERLIN</b><div class='close'>X</div> <br/>se encuentra en el espacio público, es accesible al público durante todo el día. - Para visitas especiales se pueden reservar aquí.  101 imágenes de gran formato pintados directamente sobre la pared son para la alegría de la caída del muro, para superar la Cortina de Hierro en Europa, la euforia por la libertad de la persecución, el espionaje y la falta de libertad, la esperanza de una mejor sociedad humana pacífica ganado. Para historias personales, los deseos y los sueños. </p> </div></div>";
-          $('.hola').html(thehtml);
+          $('.html').html(thehtml);
         }else if (porId==="Jewish MuseumBerlin"){
-            console.log("este es el Quinto")
+            console.log("this fiv")
           var thehtml = "<div class='contZoo container' id='delete'><div class='col-md-4'><img src='https://bronwynvowles.files.wordpress.com/2011/10/jewish-museum-large.jpeg'class='image'></div><div class='col-md-8'><p><b>Jewish Museum Berlin</b><div class='close'>X</div> <br/>El Museo Judío de Berlín abrió sus puertas en septiembre de 2001. Dos años antes, el nuevo edificio vacío por el arquitecto Daniel Libeskind lo que una atracción visitante inesperado. En esta sección, se presenta el complejo de edificios en la imagen y el texto: El Edificio Antiguo - barroco Collegienhaus, lo posmoderno Libeskind edificio, el patio de cristal erigido en 2007 y la nueva Academia abrió sus puertas en 2012. Las circunstancias de la fundación del museo, el colecciones que se basa en, y las personas que han dirigido su desarrollo se pueden encontrar aquí.</p></div></div>";
-          $('.hola').html(thehtml);
+          $('.html').html(thehtml);
         }else{
-            console.log("ha fallado")
+            console.log("unsucefull")
         };
         //code of close div with information
         $(".close").click(function(event){
